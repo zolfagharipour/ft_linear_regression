@@ -111,15 +111,6 @@ ft_linear_regression/
 - Matplotlib 3.10
 - Pillow 10.0.0
 
-## Makefile Commands
-
-- `make setup` - Install dependencies
-- `make train` - Train the model
-- `make predict` - Run prediction program
-- `make evaluate` - Evaluate model performance
-- `make clean` - Remove generated files
-- `make help` - Show available commands
-
 
 ## License
 
