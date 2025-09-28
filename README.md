@@ -47,8 +47,7 @@ make setup
 ### Training the Model
 ```bash
 make train
-# or directly:
-python src/train.py data/data.csv
+# optional: add PATH to data as argument
 ```
 
 This will:
@@ -61,8 +60,6 @@ This will:
 ### Making Predictions
 ```bash
 make predict
-# or directly:
-python src/predict.py
 ```
 
 Interactive session to predict car prices:
