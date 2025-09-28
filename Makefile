@@ -3,7 +3,7 @@ PY   := $(VENV)/bin/python
 PIP  := $(VENV)/bin/pip
 
 .PHONY: default setup train predict clean help
-default: help
+default: setup
 
 setup: $(VENV)/bin/python
 	$(PIP) install --upgrade pip
@@ -18,8 +18,11 @@ train:
 predict: 
 	$(PY) src/predict.py
 
+evaluate: 
+	$(PY) src/evaluate.py
+
 clean:
-	rm -rf $(VENV) __pycache__ src/__pycache__ model/*.json
+	rm -rf $(VENV) __pycache__ src/__pycache__ model/*.json plots/*.png plot.png epochs.gif
 
 help:
 	@echo "Targets: setup, train, predict, clean"
