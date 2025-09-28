@@ -19,7 +19,7 @@ predict:
 	$(PY) src/predict.py
 
 evaluate: 
-	$(PY) src/evaluate.py
+	@$(PY) src/evaluate.py $(filter-out $@,$(MAKECMDGOALS))
 
 clean:
 	rm -rf __pycache__ src/__pycache__ model/*.json plots/*.png plot.png epochs.gif
@@ -30,6 +30,7 @@ clean-all: clean
 help:
 	@echo "Targets: setup, train, predict, evaluate, clean, clean-all"
 	@echo "Usage: make train data/data.csv"
+	@echo "Usage: make evaluate data/data.csv"
 
 %:
 	@:

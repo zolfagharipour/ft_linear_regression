@@ -25,7 +25,7 @@ This repository is intended as a reference and educational tool. **42 students a
 - ✅ **Feature Standardization**: Proper data preprocessing for better convergence
 - ✅ **Interactive Prediction**: Command-line interface for price predictions
 - ✅ **Model Persistence**: Saves trained parameters to JSON file
-- ✅ **Performance Evaluation**: MSE, RMSE, and MAE calculations
+- ✅ **Performance Evaluation**: R², MSE, RMSE, and MAE calculations
 - ✅ **Visualization**: Training progress plots and animated GIF
 - ✅ **Error Handling**: Robust input validation and file operations
 
@@ -47,12 +47,12 @@ make setup
 ### Training the Model
 ```bash
 make train
-# optional: add PATH to data as argument
+# optional: add PATH to data as an argument
 ```
 
 This will:
 - Load the dataset from `data/data.csv`
-- Train the model using gradient descent (10 epochs by default)
+- Train the model using gradient descent (100 epochs by default)
 - Save the learned parameters to `model/model.json`
 - Generate training plots in `plots/` directory
 - Create an animated GIF showing the learning process
@@ -71,13 +71,15 @@ Estimated price: 4500.00
 ### Evaluating Model Performance
 ```bash
 make evaluate
+# optional: add PATH to data as an argument
 ```
 
 Outputs performance metrics:
 ```
-Mean Squared Error (MSE): 1234.56
-Root Mean Squared Error (RMSE): 35.14
-Mean Absolute Error (MAE): 28.90
+Model Accuracy (R²): 63.01%
+Mean Squared Error (MSE): 447093.46
+Root Mean Squared Error (RMSE): 668.65
+Mean Absolute Error (MAE): 559.28
 ```
 
 ## Project Structure
@@ -106,7 +108,3 @@ ft_linear_regression/
 - Matplotlib 3.10
 - Pillow 10.0.0
 
-
-## License
-
-This project is for educational purposes as part of the 42 curriculum.
