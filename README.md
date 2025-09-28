@@ -71,8 +71,6 @@ Estimated price: 4500.00
 ### Evaluating Model Performance
 ```bash
 make evaluate
-# or directly:
-python src/evaluate.py
 ```
 
 Outputs performance metrics:
