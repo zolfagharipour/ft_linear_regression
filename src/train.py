@@ -77,8 +77,6 @@ def train(x, y, alpha=0.05, epochs=100):
 
 def main():
     csv_file = sys.argv[1] if len(sys.argv) > 1 else "data/data.csv"
-    
-    csv_file = sys.argv[1]
     x, y = load_xy(csv_file)
     t0, t1, mu, sigma = train(x, y)
     os.makedirs("model", exist_ok=True)

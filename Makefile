@@ -13,7 +13,7 @@ $(VENV)/bin/python:
 	python3 -m venv $(VENV)
 
 train: 
-	$(PY) src/train.py data/data.csv
+	@$(PY) src/train.py $(filter-out $@,$(MAKECMDGOALS))
 
 predict: 
 	$(PY) src/predict.py
@@ -29,3 +29,7 @@ clean-all: clean
 
 help:
 	@echo "Targets: setup, train, predict, evaluate, clean, clean-all"
+	@echo "Usage: make train data/data.csv"
+
+%:
+	@:
