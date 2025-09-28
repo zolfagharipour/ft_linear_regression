@@ -53,7 +53,7 @@ def Plot_Graph(x, y, yhat, theta0, theta1, epoch, xmin, xmax, m, err):
 
 
 
-def train(x, y, alpha=0.05, epochs=10):
+def train(x, y, alpha=0.05, epochs=100):
     os.makedirs("plots", exist_ok=True)
     standard_x, mu, sigma = standardize(x)
     m = standard_x.size

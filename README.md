@@ -103,32 +103,6 @@ ft_linear_regression/
 └── README.md
 ```
 
-## Algorithm Details
-
-### Linear Regression Formula
-The model uses the hypothesis: `estimatePrice(mileage) = θ₀ + θ₁ × mileage`
-
-### Gradient Descent Updates
-```python
-# Partial derivatives
-dθ₀ = (1/m) × Σ(θ₀ + θ₁×xᵢ - yᵢ)
-dθ₁ = (1/m) × Σ(θ₀ + θ₁×xᵢ - yᵢ) × xᵢ
-
-# Parameter updates
-θ₀ = θ₀ - α × dθ₀
-θ₁ = θ₁ - α × dθ₁
-```
-
-Where:
-- `m` = number of training examples
-- `α` = learning rate (default: 0.05)
-- `xᵢ, yᵢ` = standardized input features and target values
-
-### Feature Standardization
-```python
-x_scaled = (x - μ) / σ
-```
-Where μ is the mean and σ is the standard deviation of the training data.
 
 ## Dependencies
 
@@ -146,22 +120,6 @@ Where μ is the mean and σ is the standard deviation of the training data.
 - `make clean` - Remove generated files
 - `make help` - Show available commands
 
-## Generated Files
-
-- `model/model.json` - Trained model parameters
-- `plots/graph_*.png` - Training progress plots
-- `plot.png` - Final regression plot
-- `epochs.gif` - Animated training process
-
-## Educational Value
-
-This implementation demonstrates:
-- **Machine Learning Fundamentals**: Linear regression and gradient descent
-- **Mathematical Implementation**: Manual calculation of cost function and gradients
-- **Data Preprocessing**: Feature standardization for better model performance
-- **Model Evaluation**: Multiple metrics for assessing model quality
-- **Visualization**: Understanding the learning process through plots
-- **Software Engineering**: Modular code structure and error handling
 
 ## License
 
