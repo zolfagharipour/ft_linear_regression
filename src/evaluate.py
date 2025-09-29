@@ -3,7 +3,8 @@ import numpy as np
 
 def load_model(path="model/model.json"):
     if not os.path.exists(path):
-        raise FileNotFoundError("model/model.json not found. Run training first.")
+        print("model/model.json not found. Run training first.")
+        exit(0)
     with open(path, "r", encoding="utf-8") as f:
         m = json.load(f)
     # accept either mu/sigma or mu_x/sigma_x if you ever changed names
@@ -33,7 +34,7 @@ def load_file(csv_path):
     return np.array(xs, dtype=float), np.array(ys, dtype=float) 
 
 def load_data(csv_path="data/data.csv"):
-    x_data, y_data = load_file("data/data.csv")
+    x_data, y_data = load_file(csv_path)
     t0, t1, mu, sigma = load_model()
     y_reg_func = lambda x: t0 + t1 * ((x - mu) / sigma)
     return np.array([y_reg_func(x) for x in x_data]),y_data

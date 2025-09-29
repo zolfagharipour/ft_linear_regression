@@ -2,7 +2,7 @@ VENV := .venv
 PY   := $(VENV)/bin/python
 PIP  := $(VENV)/bin/pip
 
-.PHONY: default setup train predict clean clean-all help
+.PHONY: default setup train predict clean fclean help
 default: setup
 
 setup: $(VENV)/bin/python
@@ -24,11 +24,11 @@ evaluate:
 clean:
 	rm -rf __pycache__ src/__pycache__ model/*.json plots/*.png plot.png epochs.gif
 
-clean-all: clean
+fclean: clean
 	rm -rf $(VENV)
 
 help:
-	@echo "Targets: setup, train, predict, evaluate, clean, clean-all"
+	@echo "Targets: setup, train, predict, evaluate, clean, fclean"
 	@echo "Usage: make train data/data.csv"
 	@echo "Usage: make evaluate data/data.csv"
 

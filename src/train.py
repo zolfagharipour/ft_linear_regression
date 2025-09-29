@@ -5,10 +5,6 @@ import matplotlib.pyplot as plt
 from PIL import Image
 
 
-# J(θ) = (1/(2m)) * sum( (θ0 + θ1 x_i - y_i)^2 )
-# ∂J/∂θ0 = (1/m) * sum( (θ0 + θ1 x_i - y_i) )
-# ∂J/∂θ1 = (1/m) * sum( (θ0 + θ1 x_i - y_i) * x_i )
-
 def load_xy(csv_path):
     xs, ys = [], []
     try:
@@ -70,7 +66,7 @@ def train(x, y, alpha=0.05, epochs=100):
         images.append(im)
 
     os.rename(f"plots/graph_{epochs-1}.png","plot.png")
-    images[0].save('epochs.gif',save_all=True,append_images=images[1:], optimize=False, duration=500, loop=0)
+    images[0].save('epochs.gif',save_all=True,append_images=images[1:], optimize=False, duration=100, loop=0)
 
 
     return theta0, theta1, mu, sigma

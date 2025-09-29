@@ -13,7 +13,7 @@ def main():
     mu = float(m.get("mu", 0.0))
     sigma = float(m.get("sigma", 1.0))
 
-    print(f"Loaded θ: theta0={t0:.6f}, theta1={t1:.6f}  (mu_x={mu:.6f}, sigma_x={sigma:.6f})")
+    print(f"Loaded θ: theta0={t0:.6f}, theta1={t1:.6f}")
     while True:
         s = input("Enter mileage (or 'q' to quit): ").strip().lower()
         if s in {"q", "quit", "exit"}:
